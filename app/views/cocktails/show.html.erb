@@ -3,13 +3,36 @@
     <div class="col-md-8 offset-md-2">
       <h2><%= @cocktail.name %></h2>
 
+      <table class="table table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>Ingredients</th>
+            <th>Dose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cocktail.doses.each do |dose| %>
+            <tr>
+              <td><%= dose.ingredient.name %></td>
+              <td><%= dose.description %>
+                  <%= link_to dose_path(dose),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } do %>
+                      <i class="fas fa-trash"></i>
+                  <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
 
       <%= link_to "Back to List", cocktails_path %>
 
-      <%= link_to "Edit cocktail", edit_cocktail_path(@cocktail) %>
+      <%= link_to "Edit Cocktail", edit_cocktail_path(@cocktail) %>
 
+      <%= link_to "Add doses", new_cocktail_dose_path(@cocktail) %>
 
-      <%= link_to "Delete #{@cocktail.name}",
+      <%= link_to "Delete cocktail #{@cocktail.name}",
         cocktail_path(@cocktail),
         method: :delete,
         data: { confirm: "Are you sure?" } %>

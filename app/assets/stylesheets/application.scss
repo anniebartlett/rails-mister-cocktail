@@ -11,3 +11,54 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+$jet: rgba(41, 41, 41, 1);
+$ivory: rgba(252, 250, 237, 1);
+$indigo-dye: rgba(14, 74, 108, 1);
+$queen-blue: rgba(76, 105, 135, 1);
+$dark-orange: rgba(255, 139, 31, 1);
+
+$pink: rgba(255, 202, 212, 1);
+$light-cyan: rgba(203, 243, 240, 1);
+$alice-blue: rgba(244, 250, 255, 1);
+$mauve: rgba(209, 169, 242, 1);
+$tiffany-blue: rgba(46, 196, 182, 1);
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: $alice-blue;
+  color: $jet;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1, h2, h3 {
+  font-family: 'Abril Fatface', cursive;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 64px;
+  color: $pink;
+}
+
+h2 {
+  font-size: 48px;
+  color: $light-cyan;
+}
+
+h3 {
+  color: $mauve;
+}
+
+a {
+  color: $tiffany-blue;
+
+  &:hover {
+    color: $light-cyan;
+    text-decoration: none;
+  }
+}

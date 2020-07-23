@@ -1,0 +1,16 @@
+<div class="container text-center mt-3">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2>Add a new recipe:</h2>
+
+        <%= simple_form_for [ @cocktail, @dose ] do |f| %>
+          <%= f.input :description %>
+          <%= f.association :ingredient %>
+          <%= f.button :submit, class: "btn btn-warning"%>
+        <% end %>
+
+      <br>
+<!--       <%#= link_to "Back to List", cocktail_path(@cocktail) %> -->
+    </div>
+  </div>
+</div>

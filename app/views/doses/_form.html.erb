@@ -1,0 +1,5 @@
+<%= simple_form_for[cocktail, doses] do |f| %>
+  <%= f.input :name %>
+  <%= f.association :ingredient %>
+  <%= f.submit class: "btn btn-warning"%>
+<% end %>
