@@ -1,7 +1,9 @@
 <div class="container text-center mt-3">
   <div class="row">
     <div class="col-md-8 offset-md-2">
-      <h2><%= @cocktail.name %></h2>
+      <div class="mb-5">
+        <h1><%= @cocktail.name %></h1>
+      </div>
 
       <table class="table table-hover">
         <thead class="thead-light">
@@ -17,6 +19,7 @@
               <td><%= dose.description %>
                   <%= link_to dose_path(dose),
                     method: :delete,
+                    class: "p-2",
                     data: { confirm: 'Are you sure?' } do %>
                       <i class="fas fa-trash"></i>
                   <% end %>
@@ -26,16 +29,19 @@
         </tbody>
       </table>
 
-      <%= link_to "Back to List", cocktails_path %>
+      <div class="links">
+        <%= link_to "Back to Recipes", cocktails_path, class: "btn btn-warning" %>
 
-      <%= link_to "Edit Name", edit_cocktail_path(@cocktail) %>
+        <%= link_to "Edit Name", edit_cocktail_path(@cocktail), class: "btn btn-warning" %>
 
-      <%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail) %>
+        <%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail), class: "btn btn-warning" %>
 
-      <%= link_to "Delete",
-        cocktail_path(@cocktail),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
+        <%= link_to "Delete",
+          cocktail_path(@cocktail),
+          method: :delete,
+          class: "btn btn-warning",
+          data: { confirm: "Are you sure?" } %>
+      </div>
     </div>
   </div>
 </div>
